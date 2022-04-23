@@ -1,13 +1,13 @@
 {
-  "name": "hyper-blogging",
-  "version": "1.0.0",
-  "description": "",
+  "name": "hyperblog",
+  "version": "0.0.1",
+  "description": "Hyperblog es una plataforma descentralizada y P2P para blogueo. Hyperblog es una forma de compartir contenido estático 100% controlada por el usuario. Libre de publicidad y manipulación.  Hyperblog está basada en Hypercore, una estructura distribuida de \"solo-anexión\". Esta estructura se replica entre usuarios sin necesidad de servidores centralizados. Los usuarios funcionan como servidores-espejo que ayudan a la difusión del contenido.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "rpaezbas",
   "license": "ISC",
   "dependencies": {
     "@rafapaezbas/simple-config": "^1.0.0",
@@ -17,5 +17,16 @@
   },
   "devDependencies": {
     "standard": "^17.0.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafapaezbas/hyperblog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rafapaezbas/hyperblog/issues"
+  },
+  "homepage": "https://github.com/rafapaezbas/hyperblog#readme"
 }
