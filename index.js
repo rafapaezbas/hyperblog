@@ -7,8 +7,6 @@ const http = require('http')
 const { readFile } = require('fs').promises
 const marked = require('marked')
 
-marked.setOptions({ headerIds: false })
-
 const init = async (store) => {
   const contentCore = store.get({ name: 'hyperblog-content' })
   const followingCore = store.get({ name: 'hyperblog-following' })
@@ -57,24 +55,23 @@ const unfollow = async (name, following) => {
 }
 
 const view = async (following, store, opts = {}) => {
-  const getBee = async (user) => {
+  const entries = []
+  marked.setOptions({ headerIds: false })
+
+  for await (const user of following.createReadStream()) {
     const key = user.value
     const core = store.get({ key })
     await core.ready()
-    return new Hyperbee(core, { keyEncoding: 'utf-8', valueEncoding: 'binary' })
-  }
-
-  const entries = []
-  for await (const user of following.createReadStream()) {
-    const content = await getBee(user)
+    const content = new Hyperbee(core, { keyEncoding: 'utf-8', valueEncoding: 'binary' })
     await content.ready()
+
     for await (const entry of content.createReadStream()) {
       entries.push({ timestamp: entry.key, value: marked.parse(entry.value.toString()) })
     }
   }
 
   const sortByTimestamp = (a, b) => a.timestamp > b.timestamp ? 1 : -1
-  return entries.sort(sortByTimestamp).map(e => marked.parse(e.value))
+  return entries.sort(sortByTimestamp).map(e => marked.parse(e.value)).join('')
 }
 
 const server = async () => {

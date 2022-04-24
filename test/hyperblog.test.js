@@ -69,6 +69,6 @@ solo('user follows other and creates view', async ({ is, pass, teardown }) => {
   is('<h1>Hello World!</h1>', text.trim())
 })
 
-async function sleep (time = 3000) {
+async function sleep (time = 1000) {
   return new Promise((resolve) => setTimeout(resolve, time))
 }
