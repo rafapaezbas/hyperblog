@@ -22,10 +22,10 @@ Hyperblog está basada en Hypercore, una estructura distribuida de "solo-anexió
 
 npm install -g hyperblog
 
-hyperblog add -f $file-path
+hyperblog add --file $file-path
 
-hyperblog follow -n name -k publicKey
+hyperblog follow --name $name --key $public-key
 
-hyperblog start
+hyperblog start --port $local-port
 
 ```
