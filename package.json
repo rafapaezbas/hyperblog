@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Hyperblog es una plataforma descentralizada y P2P para blogueo. Hyperblog es una forma de compartir contenido estático 100% controlada por el usuario. Libre de publicidad y manipulación.  Hyperblog está basada en Hypercore, una estructura distribuida de \"solo-anexión\". Esta estructura se replica entre usuarios sin necesidad de servidores centralizados. Los usuarios funcionan como servidores-espejo que ayudan a la difusión del contenido.",
   "main": "index.js",
+  "bin": {
+    "hyperblog": "./bin/hyperblog.js"
+  },
   "scripts": {
     "test": "brittle test/*.test.js",
     "fix": "standard --fix"

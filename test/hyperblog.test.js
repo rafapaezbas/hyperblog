@@ -1,4 +1,4 @@
-const { test, solo, skip } = require('brittle')
+const { test, skip } = require('brittle')
 const ram = require('random-access-memory')
 const Corestore = require('corestore')
 const { join } = require('path')

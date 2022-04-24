@@ -1,18 +1,18 @@
 # Hyperblog
 
-Hyperblog es una plataforma descentralizada y P2P para blogueo. Hyperblog es una forma de compartir contenido estático 100% controlada por el usuario. Libre de publicidad y manipulación. 
-Hyperblog está basada en Hypercore, una estructura distribuida de "solo-anexión". Esta estructura se replica entre usuarios sin necesidad de servidores centralizados. Los usuarios funcionan como servidores-espejo que ayudan a la difusión del contenido.
+Hyperblog is a decentralized and P2P platform for blogging. Hyperblog is a 100% user controlled way of sharing static content. Free of advertising and manipulation.
+Hyperblog is based on Hypercore, a distributed "append-only" framework. This structure is replicated between users without the need for centralized servers. Users function as mirror servers that help spread content.
 
 ## Users
 
-- Los usuarios de Hyperblog están identificados con la clave pública de un Hypercore, esto es diferente a la identificación de usuarios por alias (nickname). La identificación con clave pública pretendegenerar una identidad virtual disasociada de la identidad real. 
-- Los usuario pueden seguir a otros usuarios.
-- Cada vez que un usuario recibe el contenido de otro usuario, pasa a funcionar como servidor espejo de ese contenido.
+- Hyperblog users are identified with the public key of a Hypercore, this is different from the identification of users by alias (nickname). Public key identification aims to generate a virtual identity disassociated from the real identity.
+- Users can follow other users.
+- Every time a user receives content from another user, it starts to function as a mirror server for that content.
 
 ## Content and format
 
-- Cada publicación es un archivo en formato markdown. 
-- El contenido no puede ser modificado o eliminado.
+- Each publication is a file in markdown format.
+- The content cannot be modified or deleted.
 
 ## Interface
 

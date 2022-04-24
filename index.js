@@ -1,8 +1,5 @@
 const Hyperswarm = require('hyperswarm')
-const Corestore = require('corestore')
 const Hyperbee = require('hyperbee')
-const { homedir } = require('os')
-const { join } = require('path')
 const http = require('http')
 const { readFile } = require('fs').promises
 const marked = require('marked')
@@ -76,11 +73,6 @@ const server = async () => {
 
 }
 
-const main = async () => {
-  const store = new Corestore(join(homedir(), '.hyperblog'))
-  await store.ready()
-}
-
 module.exports = {
   init,
   add,
@@ -88,5 +80,6 @@ module.exports = {
   unfollow,
   view,
   refresh,
-  server
+  server,
+  replicate
 }
