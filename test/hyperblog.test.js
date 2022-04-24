@@ -1,4 +1,4 @@
-const { test, solo } = require('brittle')
+const { test, solo, skip } = require('brittle')
 const ram = require('random-access-memory')
 const Corestore = require('corestore')
 const { join } = require('path')
@@ -42,7 +42,7 @@ test('user follows itself and creates view', async ({ is, pass, teardown }) => {
   is('<h1>Hello World!</h1>\n<h2>Second entry</h2>', text.trim())
 })
 
-test('user follows other and creates view', async ({ is, pass, teardown }) => {
+skip('user follows other and creates view', async ({ is, pass, teardown }) => {
   const storeA = new Corestore(ram)
   await storeA.ready()
   const storeB = new Corestore(ram)
