@@ -17,7 +17,6 @@ const init = async (store) => {
 
   const swarm = new Hyperswarm()
   swarm.join(contentCore.discoveryKey)
-  console.log('joining:', contentCore.discoveryKey)
   swarm.on('connection', connection => {
     const str = store.replicate(connection)
     str.on('error', e => console.log('replication error:', e))
@@ -29,7 +28,6 @@ const init = async (store) => {
 const replicate = async (key, swarm, store) => {
   const core = store.get({ key })
   await core.ready()
-  console.log('replicating...', core.discoveryKey)
   swarm.join(core.discoveryKey)
 }
 
